@@ -76,7 +76,7 @@ USER www-data
 
 COPY --from=build-container --chown=www-data:www-data /var/mapbender /var/mapbender
 
-CMD ["sh", "-c", "'a2dismod mpm_event mpm_worker && apache2-foreground'"]
+CMD ["sh", "-c", "a2dismod mpm_event mpm_worker && apache2-foreground"]
 
 FROM base-container AS mapbender-puppeteer-build
 
@@ -114,4 +114,4 @@ USER www-data
 
 COPY --from=build-container --chown=www-data:www-data /var/mapbender /var/mapbender
 
-CMD ["sh", "-c", "'a2dismod mpm_event mpm_worker && apache2-foreground'"]
+CMD ["sh", "-c", "a2dismod mpm_event mpm_worker && apache2-foreground"]
